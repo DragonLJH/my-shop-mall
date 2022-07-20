@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dragon.demo.common.Emerge;
 import com.dragon.demo.common.Order;
 import com.dragon.demo.service.impl.OrderServiceImpl;
 
@@ -33,5 +35,7 @@ public class OrderController {
 	public List<Order> queryAllOrderByUserName(Order order){
 		return orderServiceImpl.queryAllOrderByUserName(order.getUserName());
 	}
+	
+
 
 }

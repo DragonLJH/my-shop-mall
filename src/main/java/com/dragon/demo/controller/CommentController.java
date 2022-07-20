@@ -29,6 +29,7 @@ public class CommentController {
 	public List<Comment> queryCommentsByProductId(Comment comment) {
 		return commentServiceImpl.queryCommentsByProductId(comment.getProductId());
 	}
+	
 
 	@ApiOperation("新增产品评论信息----insertComment")
 	@PostMapping("/insertComment")

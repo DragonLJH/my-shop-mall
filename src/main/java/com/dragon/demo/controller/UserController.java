@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dragon.demo.common.Product;
 import com.dragon.demo.common.User;
 import com.dragon.demo.service.impl.UserServiceImpl;
 
@@ -27,6 +28,12 @@ public class UserController {
 	@GetMapping("/queryAllUser")
 	public List<User> queryAllUser() {
 		return userServiceImpl.list();
+	}
+	
+	@ApiOperation("根据id删除用户信息----deleteUserById")
+	@PostMapping("/deleteUserById")
+	public boolean deleteUserById(User user) {
+		return userServiceImpl.removeById(user.getUserId());
 	}
 
 	@ApiOperation("根据用户名查询该用户----queryUserByUserName")

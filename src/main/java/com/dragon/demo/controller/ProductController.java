@@ -44,6 +44,12 @@ public class ProductController {
 		return resProductList;
 	}
 	
+	@ApiOperation("根据id删除商品信息----deleteProductById")
+	@PostMapping("/deleteProductById")
+	public boolean deleteProductById(Product product) {
+		return productDbServiceImpl.removeById(product.getProductId());
+	}
+	
 	@ApiOperation("根据商品定位查询对应的商品----queryProductByEmerge")
 	@GetMapping("/queryProductByEmerge")
 	public List<Product> queryProductByEmerge(Emerge emerge) {
