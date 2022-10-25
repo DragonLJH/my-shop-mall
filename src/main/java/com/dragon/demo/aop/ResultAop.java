@@ -9,11 +9,10 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.Configuration;
 
-@Aspect
-@Configuration
+//@Aspect
+//@Configuration
 public class ResultAop {
 	@Pointcut(value = "execution(* com.dragon.demo.controller..*.*(..))")
-
 	public void brokerAspect() {
 
 	}
