@@ -1,5 +1,6 @@
 package com.dragon.demo.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,9 @@ public class CommentController {
 
 	@ApiOperation("新增产品评论信息----insertComment")
 	@PostMapping("/insertComment")
-	public boolean insertComment(Comment comment) {
+	public boolean insertComment(Comment comment)
+	{
+		comment.setCreateDate(new Date(System.currentTimeMillis()).toGMTString());
 		return commentServiceImpl.save(comment);
 	}
 
@@ -44,7 +47,7 @@ public class CommentController {
 	}
 
 	@ApiOperation("获取所有评论信息----queryAllCOmment")
-	@PostMapping("/queryAllCOmment")
+	@GetMapping("/queryAllComment")
 	public List<Comment> queryAllCOmment(){
 		return commentServiceImpl.list();
 	}
